@@ -7,7 +7,16 @@ public class Main {
     public ArrayList<String> solution(int n, String[] str) {
         ArrayList<String> answer = new ArrayList<>();
         for (String x : str) {
-            String tmp = new StringBuilder(x).reverse().toString();
+            char[] s = x.toCharArray();
+            int lt = 0, rt = x.length()-1;
+            while (lt < rt) {
+                char tmp = s[lt];
+                s[lt] = s[rt];
+                s[rt] = tmp;
+                lt++;
+                rt--;
+            }
+            String tmp = String.valueOf(s);
             answer.add(tmp);
         }
 
