@@ -2,17 +2,18 @@ package org.example;
 
 import java.util.Scanner;
 
-public class Main {
+/**
+ * 특정 문자 뒤집기
+ */
+class five_FlipSpecificCharacters {
     public String solution(String str) {
         String answer;
         char[] s = str.toCharArray();
         int lt = 0, rt = str.length() - 1;
         while (lt < rt) {
-            if (!Character.isAlphabetic(s[lt])) { // lt가 알파벳이 아닐 때
-                lt++;
-            } else if (!Character.isAlphabetic(s[rt])) {
-                rt--;
-            } else {
+            if (!Character.isAlphabetic(s[lt])) lt++;
+            else if (!Character.isAlphabetic(s[rt])) rt--;
+            else {
                 char tmp = s[lt];
                 s[lt] = s[rt];
                 s[rt] = tmp;
@@ -21,13 +22,11 @@ public class Main {
             }
         }
         answer = String.valueOf(s);
-
         return answer;
     }
 
-
     public static void main(String[] args) {
-        Main T = new Main();
+        five_FlipSpecificCharacters T = new five_FlipSpecificCharacters();
         Scanner kb = new Scanner(System.in);
         String str = kb.next();
         System.out.println(T.solution(str));
