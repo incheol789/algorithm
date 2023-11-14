@@ -1,38 +1,35 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public ArrayList<String> solution(int n, String[] str) {
-        ArrayList<String> answer = new ArrayList<>();
-        for (String x : str) {
-            char[] s = x.toCharArray();
-            int lt = 0, rt = x.length()-1;
-            while (lt < rt) {
+    public String solution(String str) {
+        String answer;
+        char[] s = str.toCharArray();
+        int lt = 0, rt = str.length() - 1;
+        while (lt < rt) {
+            if (!Character.isAlphabetic(s[lt])) { // lt가 알파벳이 아닐 때
+                lt++;
+            } else if (!Character.isAlphabetic(s[rt])) {
+                rt--;
+            } else {
                 char tmp = s[lt];
                 s[lt] = s[rt];
                 s[rt] = tmp;
                 lt++;
                 rt--;
             }
-            String tmp = String.valueOf(s);
-            answer.add(tmp);
         }
+        answer = String.valueOf(s);
 
         return answer;
     }
 
+
     public static void main(String[] args) {
         Main T = new Main();
         Scanner kb = new Scanner(System.in);
-        int n = kb.nextInt();
-        String[] str = new String[n];
-        for (int i = 0; i < n; i++) {
-            str[i] = kb.next();
-        }
-        for (String x : T.solution(n, str)) {
-            System.out.println(x);
-        }
+        String str = kb.next();
+        System.out.println(T.solution(str));
     }
 }
