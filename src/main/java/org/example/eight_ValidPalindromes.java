@@ -8,9 +8,12 @@ import java.util.Scanner;
 public class eight_ValidPalindromes {
     public String solution(String s) {
         String answer = "NO";
+        // 알파벳 대문자가 아니면 다 빈문자로
         s = s.toUpperCase().replaceAll("[^A-Z]", "");
         String tmp = new StringBuilder(s).reverse().toString();
-        if (s.equals(tmp)) answer = "YES";
+        if (s.equals(tmp)) {
+            answer = "YES";
+        }
         return answer;
     }
 
