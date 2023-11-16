@@ -11,9 +11,11 @@ class five_FlipSpecificCharacters {
         char[] s = str.toCharArray();
         int lt = 0, rt = str.length() - 1;
         while (lt < rt) {
-            if (!Character.isAlphabetic(s[lt])) lt++;
-            else if (!Character.isAlphabetic(s[rt])) rt--;
-            else {
+            if (!Character.isAlphabetic(s[lt])) {
+                lt++;
+            } else if (!Character.isAlphabetic(s[rt])) {
+                rt--;
+            } else {
                 char tmp = s[lt];
                 s[lt] = s[rt];
                 s[rt] = tmp;

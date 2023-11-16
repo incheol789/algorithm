@@ -10,14 +10,18 @@ public class nine_Number {
 
      추출하여 만들어지는 자연수는 100,000,000을 넘지 않습니다.
 
+     문자열 s에서 숫자만 추출하여 그 값을 정수로 변환하는 함수입니다.
      */
     public int solution(String s) {
         String answer = "";
+        // 문자열 s를 문자 배열로 변환하고 각 문자 x에 대해 반복
         for (char x : s.toCharArray()) {
+            // 만약 현재의 문자 x가 숫자인 경우, 해당 숫자를 문자열 answer에 추가
             if (Character.isDigit(x)) {
                 answer += x;
             }
         }
+        // 문자열 answer를 정수로 변환하여 반환
         return Integer.parseInt(answer);
     }
 

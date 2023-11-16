@@ -16,19 +16,12 @@ class sev_PalindromeString {
      */
     public String solution(String str) {
         String answer = "NO";
-//        int len = str.length();
-//        for (int i = 0; i < len / 2; i++) {
-//            /**
-//             * 0 != 4 - 0 - 1
-//             * 1 != 4 - 1 - 1
-//             * 2 != 4 - 2 - 1
-//             */
-//            if (str.charAt(i) != str.charAt(len - i - 1)) {
-//                return "NO";
-//            }
-//        }
 
+        // 주어진 문자열 str을 StringBuilder를 이용해 뒤집어서 tmp에 저장
         String tmp = new StringBuilder(str).reverse().toString();
+
+        // 만약 원래 문자열 str과 뒤집은 문자열 tmp이 대소문자 구분 없이 같다면 (회문의 조건),
+        // answer를 "YES"로 업데이트
         if (str.equalsIgnoreCase(tmp)) {
             answer = "YES";
         }
