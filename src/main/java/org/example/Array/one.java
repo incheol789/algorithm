@@ -12,9 +12,14 @@ public class one {
      */
     public ArrayList<Integer> solution(int n, int[] arr) {
         ArrayList<Integer> answer = new ArrayList<>();
+        // 첫번째 수는 무조건 출력
         answer.add(arr[0]);
+
+        // 배열의 두 번째 원소부터 마지막 원소까지 루프
         for (int i = 1; i < n; i++) {
+            // 현재 원소가 이전 원소보다 큰 경우를 확인
             if (arr[i] > arr[i - 1]) {
+                // 현재 원소가 이전 원소보다 크다면, 현재 원소를 answer 배열에 추가
                 answer.add(arr[i]);
             }
         }

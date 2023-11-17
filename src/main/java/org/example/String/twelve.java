@@ -34,8 +34,12 @@ public class twelve {
             String tmp = s.substring(0, 7)
                     .replace('#', '1')
                     .replace('*', '0');
+            // 2진수 문자열인 tmp를 10진수로 변환하여 num에 저장
             int num = Integer.parseInt(tmp, 2);
+            // 아래 코드를 아스키 번호로 간주하고, 해당하는 문자를 answer에 추가
             answer += (char)num;
+
+            // 처리한 7자리를 제외한 나머지 부분을 다시 s에 저장
             s = s.substring(7);
         }
         return answer;
