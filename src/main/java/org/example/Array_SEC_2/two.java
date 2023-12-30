@@ -1,6 +1,4 @@
-package org.example.Array;
-
-import com.sun.tools.javac.Main;
+package org.example.Array_SEC_2;
 
 import java.util.Scanner;
 

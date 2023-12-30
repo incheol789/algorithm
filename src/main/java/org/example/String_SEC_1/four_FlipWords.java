@@ -1,4 +1,4 @@
-package org.example.String;
+package org.example.String_SEC_1;
 
 import java.util.ArrayList;
 import java.util.Scanner;
