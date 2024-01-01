@@ -1,22 +1,28 @@
 package org.example.DFSBFS_SEC_7;
+// 노드 클래스
 class Node1 {
-	int data;
-	Node1 lt, rt;
+	int data; // 노드가 저장할 데이터
+	Node1 lt, rt; // 왼쪽 자식(left)과 오른쪽 자식(right) 노드를 가리키는 포인터
+
+	// 노드 생성자
 	public Node1(int val) {
-		data = val;
-		lt = rt = null;
+		data = val; // 노드에 데이터 저장
+		lt = rt = null; // 처음에는 자식 노드가 없으므로 null로 초기화
 	}
 }
 
+// 이진 트리 깊이우선탐색 클래스
 public class 이진트리순회_깊이우선탐색 {
-	Node1 root;
+	Node1 root; // 트리의 루트 노드
+
+	// DFS 메소드
 	public void DFS(Node1 root) {
 		if (root == null) {
-			return;
+			return; // 기저 조건: 노드가 null이면 더 이상 순회하지 않고 반환
 		} else {
-			DFS(root.lt);
-			System.out.print(root.data + " ");
-			DFS(root.rt);
+			DFS(root.lt); // 왼쪽 자식으로 재귀 호출
+			System.out.print(root.data + " "); // 현재 노드의 데이터 출력 (중위 순회: 왼쪽 - 루트 - 오른쪽)
+			DFS(root.rt); // 오른쪽 자식으로 재귀 호출
 		}
 	}
 
