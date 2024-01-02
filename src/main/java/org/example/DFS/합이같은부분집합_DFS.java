@@ -8,17 +8,18 @@ public class 합이같은부분집합_DFS {
 	boolean flag = false; // 조건에 맞는 부분집합을 찾으면 탐색을 중지위한 플래그
 
 	public void DFS(int Level, int sum, int[] arr) { // DFS 메서드, L은 현재 레벨, sum은 현재까지의 부분집합 합, arr는 주어진 배열
-		if (flag) return; // 이미 답을 찾았으면 더 이상 탐색 X
-		if (sum > total / 2) return; // 현재 합이 전체 합의 반을 초과하면 더 이상 탐색 X
-		if (Level == n) { // 배열의 끝에 도달했을 경우,
-			if ((total - sum) == sum) { // 현재까지의 합과 나머지 합이 같으면 정답 처리
+		if (flag) return;
+		if (sum > total / 2) return;
+		if (Level == n) {
+			if ((total - sum) == sum) {
 				answer = "YES";
-				flag = true; // 답을 찾았으므로 탐색을 종료하도록 플래그를 설정
+				flag = true;
 			}
 		} else {
-			DFS(Level + 1, sum + arr[Level], arr); // 현재 원소를 부분집합에 포함시키는 경우
-			DFS(Level + 1, sum, arr); // 현재 원소를 부분집합에 포함시키지 않는 경우
+			DFS(Level + 1, sum + arr[Level], arr);
+			DFS(Level + 1, sum, arr);
 		}
+
 	}
 
 	public static void main(String[] args) {
