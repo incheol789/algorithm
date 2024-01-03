@@ -2,7 +2,7 @@ package org.example.DFS;
 
 import java.util.Scanner;
 
-public class 바둑이승차_DFS {
+public class 바둑이승차 {
 	/**
 	 * 철수는 바둑이들을 데리고 시장에 가려고 한다. 그런데 그의 트럭은 C 킬로그램을 넘게 태울 수가 없다.
 	 * 철수는 C를 넘지 않으면서 바둑이들을 가장 무겁게 태우고 싶어한다.
@@ -22,7 +22,7 @@ public class 바둑이승차_DFS {
 	}
 
 	public static void main(String[] args) {
-		바둑이승차_DFS T = new 바둑이승차_DFS();
+		바둑이승차 T = new 바둑이승차();
 		Scanner kb = new Scanner(System.in);
 		c = kb.nextInt();
 		n = kb.nextInt();
