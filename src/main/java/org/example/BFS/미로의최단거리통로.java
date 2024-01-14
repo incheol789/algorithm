@@ -22,14 +22,12 @@ public class 미로의최단거리통로 {
 		board[x][y] = 1;
 		while (!Q.isEmpty()) {
 			Point tmp = Q.poll();
-			// 12시, 3시, 6시 총 3번
 			for (int i = 0; i < 4; i++) {
 				int nx = tmp.x + dx[i];
 				int ny = tmp.y + dy[i];
 				if (nx >= 1 && nx <= 7 && ny >= 1 && ny <= 7 && board[nx][ny] == 0) {
 					board[nx][ny] = 1;
 					Q.offer(new Point(nx, ny));
-					// 한칸 이동할때마다 + 1
 					dis[nx][ny] = dis[tmp.x][tmp.y] + 1;
 				}
 			}

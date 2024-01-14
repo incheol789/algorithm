@@ -2,7 +2,7 @@ package org.example.String_SEC_1;
 
 import java.util.Scanner;
 
-public class two_CaseConversion {
+public class 대소문자변환 {
     /**
      대문자와 소문자가 같이 존재하는 문자열을 입력받아 대문자는 소문자로 소문자는 대문자로 변환하여 출력하는 프로그램을 작성하세요.
 
@@ -18,13 +18,13 @@ public class two_CaseConversion {
             } else {
                 answer += Character.toLowerCase(x);
             }
-
         }
+        
         return answer;
     }
 
     public static void main(String[] args) {
-        two_CaseConversion T = new two_CaseConversion();
+        대소문자변환 T = new 대소문자변환();
         Scanner kb = new Scanner(System.in);
         String str = kb.next();
         System.out.print(T.solution(str));
