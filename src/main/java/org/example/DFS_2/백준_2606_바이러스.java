@@ -1,7 +1,7 @@
 package org.example.DFS_2;
 
-import java.util.*;
 import java.io.*;
+import java.util.StringTokenizer;
 
 public class 백준_2606_바이러스 {
 	static boolean[][] graph;
@@ -15,7 +15,7 @@ public class 백준_2606_바이러스 {
 
 		for (int i = 1; i <= N; i++) {
 			if (visited[i] == false && graph[idx][i])
-				DFS(i);
+			DFS(i);
 		}
 	}
 
@@ -44,7 +44,7 @@ public class 백준_2606_바이러스 {
 		DFS(1);
 
 		// 3. 출력
-		bw.write(String.valueOf(answer - 1));
+		bw.write(String.valueOf(answer));
 
 		br.close();
 		bw.close();
